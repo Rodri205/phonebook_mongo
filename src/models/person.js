@@ -14,7 +14,7 @@ mongoose.set("strictQuery", false);
 const personSchema = new mongoose.Schema({
   name: {
     type: String,
-    minLength: 3,
+    minLength: 5,
     required: true,
   },
   number: {
