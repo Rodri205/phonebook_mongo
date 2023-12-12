@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev",
     "start": "vite preview",
     "build": "vite build",
     "lint": "eslint . --ext .js, .npx eslint --initjsx --report-unused-disable-directives --max-warnings 0",
