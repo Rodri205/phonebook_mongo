@@ -1,0 +1,31 @@
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/api/persons
+
+###
+GET http://localhost:3000/api/persons/65690828b23e498dd51823a6
+
+###
+DELETE http://localhost:3000/api/persons/6542f3543c512050c6472864
+
+###
+POST http://localhost:3000/api/persons
+Content-Type: application/json
+
+{
+  "name": "Ju",
+  "number": "0998264720"
+}
+
+###
+PUT http://localhost:3000/api/persons/65690828b23e498dd51823a6
+Content-Type: application/json
+
+{
+  "name": "Rafael Nadal Perera",
+  "number": "0998264721"
+}
+
+###
+GET http://localhost:3000/info
