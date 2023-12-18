@@ -1,11 +1,11 @@
 {
-  "name": "phone_mongo",
+  "name": "phone_mongo2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "start": "vite preview",
+    "dev": "vite",
+    "start": "nodemon server.js",
     "build": "vite build",
     "lint": "eslint . --ext .js, .npx eslint --initjsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -14,7 +14,7 @@
     "axios": "^1.6.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^8.0.2",
+    "mongoose": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

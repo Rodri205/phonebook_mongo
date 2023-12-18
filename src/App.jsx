@@ -124,6 +124,7 @@ function App () {
 
   /// /// U P D A T E   P E R S O N S ///////////
   const handleUpdateNumber = async (id, newPerson, newNumber) => {
+    // validation here
     const personUpdate = {
       name: newPerson,
       number: newNumber
