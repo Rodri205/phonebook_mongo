@@ -52,7 +52,12 @@ function App () {
         (persons) => persons.name === newPerson && persons.number === newNumber
       )
     ) {
-      alert(`${newPerson} is already added to phonebook`)
+      setConfirmation(
+        `This contact '${newPerson}' '${newNumber}' is already added to phonebook`
+      )
+      setTimeout(() => {
+        setConfirmation(null)
+      }, 3000)
       setNewPerson('')
       setNewNumber('')
       inputRef.current.focus()
@@ -101,6 +106,8 @@ function App () {
           hook()
         })
         .catch((error) => {
+          setNewNumber('')
+          inputRef.current.focus()
           setConfirmation(error.response.data.error)
           setTimeout(() => {
             setConfirmation(null)
@@ -122,9 +129,28 @@ function App () {
     setFilter(value)
   }
 
+  const validatePhoneNumber = (value) => {
+    // Expresión regular para validar el formato del número de teléfono
+    const phoneRegex = /^\d{2,3}-\d{7}/
+    // Verificar si el número de teléfono cumple con el formato deseado
+    return phoneRegex.test(value) ? null : 'Invalid phone number format. Must be "xx-xxxxxxx".'
+  }
+
   /// /// U P D A T E   P E R S O N S ///////////
   const handleUpdateNumber = async (id, newPerson, newNumber) => {
-    // validation here
+    const validationError = validatePhoneNumber(newNumber)
+    if (validationError) {
+      // console.error('Validation Error:', validationError)
+      // throw new Error(validationError)
+      setConfirmation('Please enter a valid phone number' + ' ' +
+        validationError
+      )
+      setTimeout(() => {
+        setConfirmation(null)
+      }, 3000)
+      setNewNumber('')
+      inputRef.current.focus()
+    }
     const personUpdate = {
       name: newPerson,
       number: newNumber
@@ -185,3 +211,4 @@ function App () {
 }
 
 export default App
+ //link github with phonebook_mongo Rodri205
