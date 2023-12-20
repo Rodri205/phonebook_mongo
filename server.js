@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000
 // Middleware
 app.use(express.json())
 app.use(cors())
+app.use(express.static('dist'))
 
 // Mongodb connection
 const url = process.env.MONGODB_URI
